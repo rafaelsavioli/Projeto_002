@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   DndContext,
   PointerSensor,
@@ -166,11 +167,19 @@ export default function Kanban() {
 
   return (
     <div className="p-8 space-y-6">
-      <div>
-        <h1 className="font-display text-2xl font-bold text-slate-900">Kanban</h1>
-        <p className="text-sm text-slate-500 mt-1">
-          Drag cards between columns to update payment status.
-        </p>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h1 className="font-display text-2xl font-bold text-slate-900">Kanban</h1>
+          <p className="text-sm text-slate-500 mt-1">
+            Drag cards between columns to update payment status.
+          </p>
+        </div>
+        <Link
+          to="/bulk"
+          className="text-sm font-semibold text-brand-600 hover:text-brand-700 transition"
+        >
+          Batch update statuses →
+        </Link>
       </div>
 
       {error && (

@@ -12,6 +12,13 @@ cd frontend && npm run dev
 
 Frontend proxies `/api/*` → `http://localhost:4000`.
 
+Frontend env (`frontend/.env`, optional):
+
+```bash
+cp frontend/.env.example frontend/.env
+# VITE_API_BASE=/api  (default when using the Vite proxy)
+```
+
 ## Production sketch (Node + static)
 
 1. **Backend**
