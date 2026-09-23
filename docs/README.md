@@ -29,6 +29,7 @@ Open http://localhost:5173 — demo login: `demo@fluxoboard.dev` / `demo1234`
 | [CHANGELOG.md](../CHANGELOG.md) | Release history |
 | [docs/adr.md](./adr.md) | Architecture decision records |
 | [docs/deployment.md](./deployment.md) | Production deploy guide |
+| [docs/performance.md](./performance.md) | Performance decisions and trade-offs |
 
 ## Structure
 

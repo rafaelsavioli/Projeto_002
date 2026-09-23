@@ -1,0 +1,28 @@
+name: Nightly health check
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Backend install, lint and unit tests
+        working-directory: backend
+        run: |
+          npm ci
+          npx prisma generate
+          npm run lint
+          npm run test:unit
+      - name: Frontend install, lint and build
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run lint
+          npm run build

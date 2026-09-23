@@ -134,6 +134,7 @@ password: demo1234
 - [Changelog](./CHANGELOG.md)
 - [Architecture decisions](./docs/adr.md)
 - [Deployment guide](./docs/deployment.md)
+- [Performance notes](./docs/performance.md)
 
 ## License
 
