@@ -52,6 +52,14 @@ Partial update of the same fields.
 ```
 Used by the Kanban board.
 
+### POST /transactions/bulk-move
+```json
+{ "ids": ["clx...", "clx..."], "status": "PAID" }
+```
+- `ids`: 1–100 transaction ids owned by the caller  
+- `status`: `PLANNED | PENDING | PAID | OVERDUE`  
+→ `200 { "updated": 2, "status": "PAID" }` or `404` if any id is missing/not owned.
+
 ### DELETE /transactions/:id
 
 ## Categories / Goals
