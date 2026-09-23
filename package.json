@@ -1,0 +1,12 @@
+{
+  "name": "fluxoboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FluxoBoard monorepo — personal finance dashboard with Kanban",
+  "scripts": {
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "lint": "npm run lint --prefix backend && npm run lint --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  }
+}
