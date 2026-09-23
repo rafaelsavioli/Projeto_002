@@ -22,6 +22,7 @@ Track income and expenses, drag transactions between status columns, and hit sav
 | **Overview** | Month picker, balance / income / expense cards, 6-month cash flow chart, expense donut by category, recent activity |
 | **Transactions** | Full CRUD, filters (month, type, status, category, text search), modal form |
 | **Kanban** | Drag & drop between **Planned → Pending → Paid → Overdue**, optimistic updates, column totals |
+| **Bulk actions** | Multi-select transactions and move status in one API call (≤100 ids) |
 | **Goals** | Savings targets with progress bars, quick ±$50 contributions, deadlines |
 | **Auth** | JWT register/login, protected routes, demo seed account |
 
@@ -135,6 +136,8 @@ password: demo1234
 - [Architecture decisions](./docs/adr.md)
 - [Deployment guide](./docs/deployment.md)
 - [Performance notes](./docs/performance.md)
+- [Frontend testing plan](./docs/testing-frontend.md)
+- [Backend testing plan](./docs/testing-backend.md)
 
 ## License
 

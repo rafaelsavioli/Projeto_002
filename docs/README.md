@@ -30,6 +30,8 @@ Open http://localhost:5173 — demo login: `demo@fluxoboard.dev` / `demo1234`
 | [docs/adr.md](./adr.md) | Architecture decision records |
 | [docs/deployment.md](./deployment.md) | Production deploy guide |
 | [docs/performance.md](./performance.md) | Performance decisions and trade-offs |
+| [docs/testing-frontend.md](./testing-frontend.md) | Frontend test strategy |
+| [docs/testing-backend.md](./testing-backend.md) | Backend test strategy |
 
 ## Structure
 
