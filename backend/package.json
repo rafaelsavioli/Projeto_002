@@ -11,7 +11,8 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
     "seed": "node prisma/seed.js",
-    "lint": "eslint src prisma"
+    "lint": "eslint src prisma",
+    "test:unit": "node src/utils/__tests__/utils.test.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
