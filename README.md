@@ -9,6 +9,9 @@ Track income and expenses, drag transactions between status columns, and hit sav
 ![Stack](https://img.shields.io/badge/Node.js-Express-339933?logo=express&logoColor=white)
 ![Stack](https://img.shields.io/badge/Prisma-SQLite-2D3748?logo=prisma&logoColor=white)
 ![Stack](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwindcss&logoColor=white)
+![CI](https://github.com/rafaelsavioli/Projeto_002/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/rafaelsavioli/Projeto_002/actions/workflows/codeql.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
