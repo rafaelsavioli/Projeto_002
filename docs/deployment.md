@@ -40,6 +40,7 @@ Frontend proxies `/api/*` → `http://localhost:4000`.
 | `DATABASE_URL` | **yes** | SQLite path or Postgres URL |
 | `RATE_LIMIT_MAX` | no | default 300 / 15 min |
 | `AUTH_RATE_LIMIT_MAX` | no | default 20 / 15 min |
+| `CORS_ALLOWED_ORIGINS` | prod | comma-separated allowlist; unset = allow all (dev) |
 
 ### Checklist before going live
 

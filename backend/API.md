@@ -2,6 +2,13 @@
 
 Base URL: `http://localhost:4000`
 
+## Health
+
+### GET /health
+```json
+{ "status": "ok", "service": "fluxoboard-api", "version": "1.0.0", "uptimeSec": 12, "env": "development" }
+```
+
 All routes except `/health` and `/auth/register|login` require:
 
 ```
