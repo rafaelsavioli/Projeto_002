@@ -12,7 +12,7 @@
     "prisma:deploy": "prisma migrate deploy",
     "seed": "node prisma/seed.js",
     "lint": "eslint src prisma",
-    "test:unit": "node src/utils/__tests__/utils.test.js"
+    "test:unit": "node src/utils/__tests__/utils.test.js && node src/utils/__tests__/dates.edge.test.js"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
