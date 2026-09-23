@@ -1,6 +1,3 @@
-const express = require('express');
-const { requestLogger } = require('./requestLogger');
-
 const RATE_WINDOW_MS = 15 * 60 * 1000;
 const RATE_MAX = Number(process.env.RATE_LIMIT_MAX) || 300;
 const AUTH_RATE_MAX = Number(process.env.AUTH_RATE_LIMIT_MAX) || 20;
@@ -36,7 +33,6 @@ if (interval.unref) interval.unref();
 
 module.exports = {
   rateLimit,
-  requestLogger,
   authRateLimit: rateLimit({ max: AUTH_RATE_MAX }),
   globalRateLimit: rateLimit(),
 };

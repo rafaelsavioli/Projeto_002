@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
-const { requestLogger, globalRateLimit } = require('./middlewares/rateLimit');
+const { globalRateLimit } = require('./middlewares/rateLimit');
+const { requestLogger } = require('./middlewares/requestLogger');
 const authRoutes = require('./modules/auth/auth.routes');
 const transactionRoutes = require('./modules/transactions/transaction.routes');
 const categoryRoutes = require('./modules/categories/category.routes');
