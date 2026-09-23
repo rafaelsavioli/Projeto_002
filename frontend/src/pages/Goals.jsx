@@ -6,9 +6,11 @@ import Card from '../components/ui/Card';
 import Spinner from '../components/ui/Spinner';
 import EmptyState from '../components/ui/EmptyState';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import { useToast } from '../context/ToastContext';
 
 export default function Goals() {
   useDocumentTitle('Goals');
+  const toast = useToast();
   const [goals, setGoals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -42,6 +44,7 @@ export default function Goals() {
       });
       setForm({ name: '', targetAmount: '', currentAmount: '', deadline: '' });
       setShowForm(false);
+      toast.success('Goal created');
       await load();
     } catch (err) {
       const details = err.response?.data?.details;
@@ -57,15 +60,17 @@ export default function Goals() {
     const next = Math.max(0, goal.currentAmount + amount);
     try {
       await updateGoal(goal.id, { currentAmount: next });
+      toast.success(amount > 0 ? `Added $${amount} to ${goal.name}` : `Withdrew $${Math.abs(amount)} from ${goal.name}`);
       await load();
     } catch {
-      setError('Failed to update goal');
+      toast.error('Failed to update goal');
     }
   }
 
   async function handleDelete(goal) {
     if (!window.confirm(`Delete goal "${goal.name}"?`)) return;
     await deleteGoal(goal.id);
+    toast.success('Goal deleted');
     await load();
   }
 

@@ -13,11 +13,13 @@ import Spinner from '../components/ui/Spinner';
 import EmptyState from '../components/ui/EmptyState';
 import TransactionModal from '../components/transactions/TransactionModal';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import { useToast } from '../context/ToastContext';
 
 const EMPTY_FILTERS = { month: currentMonth(), type: '', status: '', categoryId: '', q: '' };
 
 export default function Transactions() {
   useDocumentTitle('Transactions');
+  const toast = useToast();
   const [transactions, setTransactions] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState(EMPTY_FILTERS);
@@ -70,19 +72,30 @@ export default function Transactions() {
   }
 
   async function handleSave(payload) {
-    if (editing) {
-      await updateTransaction(editing.id, payload);
-    } else {
-      await createTransaction(payload);
+    try {
+      if (editing) {
+        await updateTransaction(editing.id, payload);
+        toast.success('Transaction updated');
+      } else {
+        await createTransaction(payload);
+        toast.success('Transaction created');
+      }
+      setModalOpen(false);
+      await load();
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Failed to save transaction');
     }
-    setModalOpen(false);
-    await load();
   }
 
   async function handleDelete(tx) {
     if (!window.confirm(`Delete "${tx.title}"?`)) return;
-    await deleteTransaction(tx.id);
-    await load();
+    try {
+      await deleteTransaction(tx.id);
+      toast.success('Transaction deleted');
+      await load();
+    } catch {
+      toast.error('Failed to delete transaction');
+    }
   }
 
   const totals = useMemo(() => {
