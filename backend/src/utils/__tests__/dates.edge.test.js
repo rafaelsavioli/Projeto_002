@@ -1,5 +1,5 @@
 // Smoke test for summary edge cases without HTTP.
-const { parseMonth, lastSixMonths, startOfMonth, endOfMonth } = require('./dates');
+const { parseMonth, lastSixMonths, startOfMonth, endOfMonth } = require('../dates');
 const assert = require('node:assert');
 
 assert.ok(startOfMonth() <= endOfMonth());
