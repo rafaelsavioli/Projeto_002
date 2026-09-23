@@ -1,4 +1,5 @@
 const service = require('./transaction.service');
+const { bulkMove } = require('./transaction.bulk');
 
 async function list(req, res, next) {
   try {
@@ -45,4 +46,13 @@ async function remove(req, res, next) {
   }
 }
 
-module.exports = { list, create, update, move, remove };
+async function bulkMoveStatus(req, res, next) {
+  try {
+    const result = await bulkMove(req.user.id, req.body);
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { list, create, update, move, remove, bulkMoveStatus };
