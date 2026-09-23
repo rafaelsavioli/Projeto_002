@@ -3,6 +3,7 @@ const cors = require('cors');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const { globalRateLimit } = require('./middlewares/rateLimit');
 const { requestLogger } = require('./middlewares/requestLogger');
+const { securityHeaders } = require('./middlewares/securityHeaders');
 const authRoutes = require('./modules/auth/auth.routes');
 const transactionRoutes = require('./modules/transactions/transaction.routes');
 const categoryRoutes = require('./modules/categories/category.routes');
@@ -13,6 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(securityHeaders);
 app.use(globalRateLimit);
 app.use(requestLogger);
 
