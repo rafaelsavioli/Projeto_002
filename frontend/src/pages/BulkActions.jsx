@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { listTransactions } from '../api/transactions.api';
 import { bulkMove } from '../api/bulk.api';
 import { formatCurrency } from '../utils/format';
@@ -21,7 +21,7 @@ export default function BulkActions() {
   const [target, setTarget] = useState('PAID');
   const [saving, setSaving] = useState(false);
 
-  useMemo(() => {
+  useEffect(() => {
     listTransactions()
       .then((txs) => setItems(txs))
       .catch(() => toast.error('Failed to load transactions'))

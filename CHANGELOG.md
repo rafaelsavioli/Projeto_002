@@ -12,6 +12,7 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - GitHub Actions CI (lint backend/frontend, production build)
 - Release workflow for tagged frontend builds
 - CodeQL security analysis workflow
+- Nightly full lint/test/build workflow
 - Request logging middleware
 - In-memory rate limiting (global + stricter for `/auth`)
 - REST API reference (`backend/API.md`)
@@ -23,10 +24,15 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - Responsive mobile sidebar drawer
 - Auth password complexity (letter + number) and sanitize helpers
 - Document titles per page via `useDocumentTitle`
+- Bulk-move endpoint (`POST /transactions/bulk-move`) and Bulk actions page
+- VS Code extension recommendations and Prettier defaults
+- Architecture decision records, deployment guide and performance notes
 
 ### Fixed
 - Restored `requestLogger` module after rate-limit refactor
 - ESLint config format for backend
+- Restored `oppositeType` export and corrected date test import path
+- Bulk actions page load uses `useEffect` instead of `useMemo`
 
 ## [1.0.0] - 2026-09-23
 
