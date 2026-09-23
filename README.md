@@ -122,8 +122,9 @@ password: demo1234
 - [ ] CSV export
 - [ ] Recurring transactions
 - [ ] Multi-currency
-- [ ] GitHub Actions CI (lint + build)
+- [x] GitHub Actions CI (lint + build)
 - [ ] PostgreSQL for production deploys
+- [ ] E2E tests with Playwright
 
 ## License
 

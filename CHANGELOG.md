@@ -13,10 +13,20 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - Release workflow for tagged frontend builds
 - CodeQL security analysis workflow
 - Request logging middleware
+- In-memory rate limiting (global + stricter for `/auth`)
 - REST API reference (`backend/API.md`)
-- Contributing guide and security policy
+- Contributing guide, security policy and changelog
 - Dependency-free unit tests for money/date helpers
 - Rollup manual chunks for charts, dnd-kit and vendor code
+- ErrorBoundary, EmptyState and Spinner UI primitives
+- Toast feedback on transaction and goal CRUD actions
+- Responsive mobile sidebar drawer
+- Auth password complexity (letter + number) and sanitize helpers
+- Document titles per page via `useDocumentTitle`
+
+### Fixed
+- Restored `requestLogger` module after rate-limit refactor
+- ESLint config format for backend
 
 ## [1.0.0] - 2026-09-23
 
