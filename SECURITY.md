@@ -27,6 +27,7 @@ Before deploying FluxoBoard beyond local development:
 - [ ] Run `NODE_ENV=production`
 - [ ] Serve HTTPS only (reverse proxy: Caddy, nginx, Traefik)
 - [ ] Restrict CORS origins in `backend/src/app.js`
+- [x] Security headers middleware (`X-Content-Type-Options`, `X-Frame-Options`, CSP, etc.)
 - [ ] Switch SQLite → PostgreSQL for durability and concurrency
 - [ ] Rate-limit `/auth/*` endpoints
 - [ ] Rotate JWT secret periodically and prefer short token TTLs

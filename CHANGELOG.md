@@ -27,6 +27,9 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - Bulk-move endpoint (`POST /transactions/bulk-move`) and Bulk actions page
 - VS Code extension recommendations and Prettier defaults
 - Architecture decision records, deployment guide and performance notes
+- Security headers middleware (CSP, nosniff, frame deny) and GitHub issue templates
+- EditorConfig for consistent indentation and line endings
+- Frontend and backend testing strategy docs
 
 ### Fixed
 - Restored `requestLogger` module after rate-limit refactor
