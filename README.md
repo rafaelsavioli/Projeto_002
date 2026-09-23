@@ -126,6 +126,15 @@ password: demo1234
 - [ ] PostgreSQL for production deploys
 - [ ] E2E tests with Playwright
 
+## Project docs
+
+- [API reference](./backend/API.md)
+- [Contributing](./CONTRIBUTING.md)
+- [Security policy](./SECURITY.md)
+- [Changelog](./CHANGELOG.md)
+- [Architecture decisions](./docs/adr.md)
+- [Deployment guide](./docs/deployment.md)
+
 ## License
 
 MIT
