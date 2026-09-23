@@ -7,6 +7,7 @@ const NAV = [
   { to: '/transactions', label: 'Transactions', icon: '⇄' },
   { to: '/kanban', label: 'Kanban', icon: '☰' },
   { to: '/goals', label: 'Goals', icon: '◎' },
+  { to: '/bulk', label: 'Bulk actions', icon: '⧉' },
 ];
 
 export default function AppLayout() {

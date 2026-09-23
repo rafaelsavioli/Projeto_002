@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Kanban from './pages/Kanban';
 import Goals from './pages/Goals';
+import BulkActions from './pages/BulkActions';
 
 export default function App() {
   return (
@@ -26,8 +27,9 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/kanban" element={<Kanban />} />
-          <Route path="/goals" element={<Goals />} />
-        </Route>
+        <Route path="/goals" element={<Goals />} />
+        <Route path="/bulk" element={<BulkActions />} />
+      </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
