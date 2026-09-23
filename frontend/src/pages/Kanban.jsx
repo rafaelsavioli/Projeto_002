@@ -13,6 +13,8 @@ import { CSS } from '@dnd-kit/utilities';
 import { listTransactions, moveTransaction } from '../api/transactions.api';
 import { formatCurrency } from '../utils/format';
 import { StatusBadge } from './Transactions';
+import Spinner from '../components/ui/Spinner';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const COLUMNS = [
   { id: 'PLANNED', label: 'Planned', accent: 'bg-slate-400' },
@@ -100,6 +102,7 @@ function Column({ column, txs }) {
 }
 
 export default function Kanban() {
+  useDocumentTitle('Kanban');
   const [transactions, setTransactions] = useState([]);
   const [activeTx, setActiveTx] = useState(null);
   const [error, setError] = useState('');
@@ -157,7 +160,7 @@ export default function Kanban() {
 
   if (loading) {
     return (
-      <div className="p-8 text-sm text-slate-500">Loading board…</div>
+      <div className="p-8"><Spinner label="Loading board…" /></div>
     );
   }
 

@@ -9,11 +9,15 @@ import { listCategories } from '../api/categories.api';
 import { currentMonth, formatCurrency, formatDate } from '../utils/format';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import Spinner from '../components/ui/Spinner';
+import EmptyState from '../components/ui/EmptyState';
 import TransactionModal from '../components/transactions/TransactionModal';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const EMPTY_FILTERS = { month: currentMonth(), type: '', status: '', categoryId: '', q: '' };
 
 export default function Transactions() {
+  useDocumentTitle('Transactions');
   const [transactions, setTransactions] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filters, setFilters] = useState(EMPTY_FILTERS);
@@ -162,11 +166,15 @@ export default function Transactions() {
 
       <Card className="overflow-hidden">
         {loading ? (
-          <p className="px-6 py-8 text-sm text-slate-500">Loading…</p>
+          <Spinner label="Loading transactions…" />
         ) : transactions.length === 0 ? (
-          <p className="px-6 py-8 text-sm text-slate-500">
-            No transactions match these filters.
-          </p>
+          <EmptyState
+            title="No transactions found"
+            description="Adjust the filters or create your first transaction to get started."
+            action={
+              <Button onClick={openCreate}>+ New transaction</Button>
+            }
+          />
         ) : (
           <table className="w-full text-sm">
             <thead>

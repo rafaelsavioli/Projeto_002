@@ -3,8 +3,12 @@ import { listGoals, createGoal, updateGoal, deleteGoal } from '../api/goals.api'
 import { formatCurrency, formatDate } from '../utils/format';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import Spinner from '../components/ui/Spinner';
+import EmptyState from '../components/ui/EmptyState';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 export default function Goals() {
+  useDocumentTitle('Goals');
   const [goals, setGoals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -125,14 +129,13 @@ export default function Goals() {
       )}
 
       {loading ? (
-        <p className="text-sm text-slate-500">Loading goals…</p>
+        <Spinner label="Loading goals…" />
       ) : goals.length === 0 ? (
-        <Card className="p-10 text-center">
-          <p className="font-display font-semibold text-slate-800">No goals yet</p>
-          <p className="text-sm text-slate-500 mt-1">
-            Create your first savings goal to start tracking progress.
-          </p>
-        </Card>
+        <EmptyState
+          title="No goals yet"
+          description="Create your first savings goal to start tracking progress."
+          action={<Button onClick={() => setShowForm(true)}>+ New goal</Button>}
+        />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {goals.map((goal) => (

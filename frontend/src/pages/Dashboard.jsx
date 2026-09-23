@@ -6,8 +6,11 @@ import Card, { CardHeader } from '../components/ui/Card';
 import StatCard from '../components/dashboard/StatCard';
 import BalanceChart from '../components/charts/BalanceChart';
 import CategoryDonut from '../components/charts/CategoryDonut';
+import Spinner from '../components/ui/Spinner';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 export default function Dashboard() {
+  useDocumentTitle('Overview');
   const [summary, setSummary] = useState(null);
   const [month, setMonth] = useState(currentMonth());
   const [error, setError] = useState('');
@@ -59,9 +62,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      {!summary && !error && (
-        <div className="text-slate-400 text-sm">Loading summary…</div>
-      )}
+      {!summary && !error && <Spinner label="Loading summary…" />}
 
       {summary && (
         <>
