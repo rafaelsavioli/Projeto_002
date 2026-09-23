@@ -4,6 +4,9 @@ import AppLayout from './components/layout/AppLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Transactions from './pages/Transactions';
+import Kanban from './pages/Kanban';
+import Goals from './pages/Goals';
 
 export default function App() {
   return (
@@ -18,6 +21,9 @@ export default function App() {
         }
       >
         <Route path="/" element={<Dashboard />} />
+        <Route path="/transactions" element={<Transactions />} />
+        <Route path="/kanban" element={<Kanban />} />
+        <Route path="/goals" element={<Goals />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
