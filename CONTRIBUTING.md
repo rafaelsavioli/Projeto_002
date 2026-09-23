@@ -14,9 +14,10 @@ Thanks for your interest in FluxoBoard.
    - `chore(scope): ...`
    - `perf(scope): ...`
    - `ci(scope): ...`
-5. Run linters before pushing:
+5. Run linters and unit tests before pushing:
    ```bash
    npm run lint --prefix backend
+   npm run test --prefix backend
    npm run lint --prefix frontend
    npm run build --prefix frontend
    ```
@@ -27,7 +28,7 @@ Thanks for your interest in FluxoBoard.
 - Backend: routes → controller (HTTP) → service (business rules + Prisma). Keep Prisma out of controllers.
 - Frontend: API wrappers in `src/api`, page-level UI in `src/pages`, reusable pieces in `src/components`.
 - Validate all mutating input with Zod on the server; never trust client payloads.
-- Prefer small PRs that pass CI (`lint` + `build`).
+- Prefer small PRs that pass CI (`lint` + `test:unit` + `build`).
 
 ## Reporting issues
 

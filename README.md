@@ -138,6 +138,7 @@ password: demo1234
 - [Performance notes](./docs/performance.md)
 - [Frontend testing plan](./docs/testing-frontend.md)
 - [Backend testing plan](./docs/testing-backend.md)
+- [Roadmap](./ROADMAP.md)
 
 ## License
 
