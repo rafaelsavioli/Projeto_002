@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
-const { requestLogger } = require('./middlewares/requestLogger');
+const { requestLogger, globalRateLimit } = require('./middlewares/rateLimit');
 const authRoutes = require('./modules/auth/auth.routes');
 const transactionRoutes = require('./modules/transactions/transaction.routes');
 const categoryRoutes = require('./modules/categories/category.routes');
@@ -12,6 +12,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(globalRateLimit);
 app.use(requestLogger);
 
 app.get('/health', (_req, res) => {
