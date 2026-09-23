@@ -3,6 +3,9 @@ const cors = require('cors');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const authRoutes = require('./modules/auth/auth.routes');
 const transactionRoutes = require('./modules/transactions/transaction.routes');
+const categoryRoutes = require('./modules/categories/category.routes');
+const goalRoutes = require('./modules/goals/goal.routes');
+const dashboardRoutes = require('./modules/dashboard/dashboard.routes');
 
 const app = express();
 
@@ -15,6 +18,9 @@ app.get('/health', (_req, res) => {
 
 app.use('/auth', authRoutes);
 app.use('/transactions', transactionRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/goals', goalRoutes);
+app.use('/dashboard', dashboardRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
